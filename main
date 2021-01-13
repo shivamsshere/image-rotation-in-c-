@@ -9,10 +9,10 @@ using namespace std;
 
 Mat rotate_it(Mat src, double angle)   //rotate_it function returning mat object with parametres imagefile and angle    
 {
-    Mat dst;      //Mat object for output image file
-    Point2f pt(src.cols / 2., src.rows / 2.);          //point from where to rotate_it    
-    Mat r = getRotationMatrix2D(pt, angle, 1.0);      //Mat object for storing after rotation
-    warpAffine(src, dst, r, Size(src.cols, src.rows));  ///applie an affine transforation to image.
+    Mat dst;      
+    Point2f pt(src.cols / 2., src.rows / 2.);          
+    Mat r = getRotationMatrix2D(pt, angle, 1.0);      
+    warpAffine(src, dst, r, Size(src.cols, src.rows)); 
     return dst;         //returning Mat object for output image file
 }
 
@@ -20,7 +20,7 @@ int main()
 {
     int angle;
     Mat src = imread("C:/Users/Shivam/Desktop/download.jfif");           //reading image file in mat object
-    /// .images / mansi ne di thi.jfif
+   
     Mat dst;      //Mat object for output image file
 
     cout << "Enter the angle \n";
